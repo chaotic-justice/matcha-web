@@ -9,6 +9,15 @@ const NEXT_PUBLIC_SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL || 'http://loc
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  webpack: (config) => ({
+    ...config,
+    externals: [
+      ...config.externals,
+      {
+        sharp: 'commonjs sharp',
+      },
+    ],
+  }),
   images: {
     remotePatterns: [
       ...[NEXT_PUBLIC_SERVER_URL /* 'https://example.com' */].map((item) => {
