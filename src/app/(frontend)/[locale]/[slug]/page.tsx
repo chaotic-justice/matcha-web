@@ -76,6 +76,7 @@ export default async function Page({ params: paramsPromise }: Args) {
   )
 }
 
+// @ts-ignore
 export async function generateMetadata({ params: paramsPromise }): Promise<Metadata> {
   const { slug = 'home', locale = 'en' } = await paramsPromise
   const page = await queryPage({

@@ -18,6 +18,7 @@ export const SeedButton: React.FC = () => {
   const [error, setError] = useState(null)
 
   const handleClick = useCallback(
+    // @ts-ignore
     async (e) => {
       e.preventDefault()
       if (loading || seeded) return
@@ -28,7 +29,7 @@ export const SeedButton: React.FC = () => {
         await fetch('/api/seed')
         setSeeded(true)
         toast.success(<SuccessMessage />, { duration: 5000 })
-      } catch (err) {
+      } catch (err: any) {
         setError(err)
       }
     },

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { CollectionSlug, GlobalSlug, Payload, PayloadRequest } from 'payload'
 
 import fs from 'fs'

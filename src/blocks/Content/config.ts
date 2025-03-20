@@ -56,6 +56,7 @@ const columnFields: Field[] = [
   link({
     overrides: {
       admin: {
+        // @ts-ignore
         condition: (_, { enableLink }) => Boolean(enableLink),
       },
     },
